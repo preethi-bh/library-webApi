@@ -12,7 +12,8 @@ import javax.ws.rs.core.MediaType;
 @Path("/rest")
 public class controller {
 		Service service=new Service();
-		
+
+		@SuppressWarnings("unchecked")
 		@GET
 		@Path("/search")
 		@Produces(MediaType.APPLICATION_XML)
