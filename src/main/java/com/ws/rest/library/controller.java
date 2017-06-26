@@ -20,10 +20,4 @@ public class controller {
 			return m;
 		}
 		
-		@GET
-		@Produces(MediaType.APPLICATION_JSON)
-		public List<Model> getAll(){
-			List<Model> m1=service.getAllBooks();
-			return m1;
-	}
 }
