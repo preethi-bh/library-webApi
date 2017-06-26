@@ -1,7 +1,9 @@
 package com.ws.rest.library;
 
 import java.sql.Date;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Model {
 		  String username;
 		  String bname;
