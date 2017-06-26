@@ -24,7 +24,7 @@ public class controller {
 		@Path("/{update}")
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Produces(MediaType.APPLICATION_JSON)
-		public String update(@PathParam("update") String status,@QueryParam("username") String username,@QueryParam("bookid") String bookid{
+		public String update(@PathParam("update") String status,@QueryParam("username") String username,@QueryParam("bookid") String bookid){
 			int result=service.StatusUp(status,username,bookid);
 			if(result>0){
 				return "Query Successful";
