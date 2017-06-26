@@ -13,12 +13,11 @@ import javax.ws.rs.core.MediaType;
 public class controller {
 		Service service=new Service();
 
-		@SuppressWarnings("unchecked")
 		@GET
 		@Path("/search")
 		@Produces(MediaType.APPLICATION_XML)
-		public  GenericEntity<List<Model>> getBook(@PathParam("search") String username,@PathParam("search") String subject){
-			GenericEntity<List<Model>> m=(GenericEntity<List<Model>>) service.getBookAvail(username,subject);
+		public  List<Model> getBook(@PathParam("search") String username,@PathParam("search") String subject){
+			List<Model> m=service.getBookAvail(username,subject);
 			return m;
 		}
 	}
