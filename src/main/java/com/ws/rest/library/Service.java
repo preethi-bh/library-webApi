@@ -41,7 +41,7 @@ private Connection connection;
 		List<Model> books=new ArrayList<Model>();
 		try{
 			PreparedStatement pst;
-			String query="select * from booktrans;
+			String query="select * from booktrans";
 			pst=connection.prepareStatement(query);
 			pst.setString(1,username);
 			pst.setString(2,subject);
