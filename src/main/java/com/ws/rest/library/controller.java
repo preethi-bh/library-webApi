@@ -19,4 +19,10 @@ public class controller {
 			List<Model> m=service.getBookAvail(username,subject);
 			return m;
 		}
+		
+		@GET
+		@Produces(MediaType.APPLICATION_XML)
+		public List<Model> getAll(){
+			List<Model> m1=service.getAllBooks();
+			return m1;
 	}
