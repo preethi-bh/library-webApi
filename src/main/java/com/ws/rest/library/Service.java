@@ -12,7 +12,7 @@ private Connection connection;
 	public Service(){
 		connection=DBUtility.getConnection();
 	}	
-	public List<Model> getBookAvail(String username,String bname){
+	public List<Model> getBookAvail(String username,String subject){
 		List<Model> books=new ArrayList<Model>();
 		try{
 			PreparedStatement pst;
