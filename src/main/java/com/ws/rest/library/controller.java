@@ -17,7 +17,7 @@ public class controller {
 		@Path("/search")
 		@Produces(MediaType.APPLICATION_XML)
 		public  GenericEntity<List<Model>> getBook(@PathParam("search") String username,@PathParam("search") String subject){
-			GenericEntity<List<Model>> m=(GenericEntity<List<Model>>) service.getBookAvail(username,bname);
+			GenericEntity<List<Model>> m=(GenericEntity<List<Model>>) service.getBookAvail(username,subject);
 			return m;
 		}
 	}
