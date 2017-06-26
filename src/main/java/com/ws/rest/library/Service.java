@@ -43,8 +43,6 @@ private Connection connection;
 			PreparedStatement pst;
 			String query="select * from booktrans";
 			pst=connection.prepareStatement(query);
-			pst.setString(1,username);
-			pst.setString(2,subject);
 			ResultSet rs=pst.executeQuery();
 
 			while(rs!=null&&rs.next()){
