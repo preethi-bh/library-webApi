@@ -12,14 +12,14 @@ private Connection connection;
 	public Service(){
 		connection=DBUtility.getConnection();
 	}	
-	public List<Model> getBookAvail(String username){
+	public List<Model> getBookAvail(String username,String subject){
 		List<Model> books=new ArrayList<Model>();
 		try{
 			PreparedStatement pst;
-			String query="select * from booktrans where username=? and status='Available'";
+			String query="select * from booktrans where username=? and subject=? and status='Available'";
 			pst=connection.prepareStatement(query);
 			pst.setString(1,username);
-			//pst.setString(2,subject);
+			pst.setString(2,subject);
 			ResultSet rs=pst.executeQuery();
 
 			while(rs!=null&&rs.next()){
