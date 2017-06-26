@@ -13,7 +13,7 @@ public class controller {
 		Service service=new Service();
 
 		@GET
-		@Path("/search")
+		@Path("/{search}")
 		@Produces(MediaType.APPLICATION_XML)
 		public  List<Model> getBook(@PathParam("search") String username){
 			List<Model> m=service.getBookAvail(username);
