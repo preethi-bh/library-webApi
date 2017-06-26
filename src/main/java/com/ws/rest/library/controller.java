@@ -15,13 +15,13 @@ public class controller {
 		@GET
 		@Path("/search")
 		@Produces(MediaType.APPLICATION_XML)
-		public  List<Model> getBook(@PathParam("search") String username,@PathParam("search") String subject){
-			List<Model> m=service.getBookAvail(username,subject);
+		public  List<Model> getBook(@PathParam("search") String username){
+			List<Model> m=service.getBookAvail(username,);
 			return m;
 		}
 		
 		@GET
-		@Produces(MediaType.APPLICATION_XML)
+		@Produces(MediaType.APPLICATION_JSON)
 		public List<Model> getAll(){
 			List<Model> m1=service.getAllBooks();
 			return m1;
