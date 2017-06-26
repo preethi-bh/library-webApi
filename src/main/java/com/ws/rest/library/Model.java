@@ -13,6 +13,9 @@ public class Model {
 		  Date renew_date;
 		  String status;
 		  int bookid;
+		
+	Model(){
+	}
 		  
 		  public String getUsername() {
 			return username;
