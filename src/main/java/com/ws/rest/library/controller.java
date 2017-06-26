@@ -14,7 +14,7 @@ public class controller {
 		
 		@GET
 		@Path("/search")
-		@Produces(MediaType.APPLICATION_JSON)
+		@Produces(MediaType.APPLICATION_XML)
 		public  List<Model> getBook(@PathParam("search") String username,@PathParam("search") String bname){
 			List<Model> m=service.getBookAvail(username,bname);
 			return m;
