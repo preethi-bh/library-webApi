@@ -36,4 +36,23 @@ private Connection connection;
 		}
 	return	books;	
 }
+
+	public int StatusUp(String status, String username,String bookid) {
+		int result = 0;
+		try{
+			PreparedStatement pst;
+			String query="update booktrans set status=? where username=? and bookid=?";
+			pst=connection.prepareStatement(query);
+			pst.setString(2,username);
+			pst.setString(1,status);
+			pst.setString(3,bookid);
+			 result=pst.executeUpdate();
+			
+		}
+		catch(Exception e){
+		e.printStackTrace();
+		}
+	return	result;	
+		
+	}
 }

@@ -80,9 +80,5 @@ public class Model {
 			this.bookid = bookid;
 		}
 		
-	@Override
-	 public String toString(){
-	    return "col name:"+username+" Bname:"+bname+" Edition:"+edition+" Subject:"+subject;
-
-	  }
+	
 }
