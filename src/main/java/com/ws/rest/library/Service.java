@@ -50,7 +50,7 @@ private Connection connection;
 			
 		}
 		catch(Exception e){
-		out.println(e);
+		e.printStackTrace();
 		}
 	return	result;	
 		
