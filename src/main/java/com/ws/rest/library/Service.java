@@ -37,7 +37,7 @@ private Connection connection;
 	return	books;	
 }
 
-	public int StatusUp(String status, String username,String bookid,String rollno) {
+	public int StatusUp(String status, String username,int bookid,String rollno) {
 		int result = 0;
 		try{
 			PreparedStatement pst;

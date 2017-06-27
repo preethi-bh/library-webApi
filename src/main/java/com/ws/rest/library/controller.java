@@ -26,7 +26,7 @@ public class controller {
 		@Path("/{update}")
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Produces("text/plain")
-		public String update(@PathParam("update") String status,@QueryParam("username") String username,@QueryParam("bookid") String bookid,@QueryParam("rollno") String rollno){
+		public String update(@PathParam("update") String status,@QueryParam("username") String username,@QueryParam("bookid") int bookid,@QueryParam("rollno") String rollno){
 			
 			int result=service.StatusUp(status,username,bookid,rollno);
 			if(result>0){
