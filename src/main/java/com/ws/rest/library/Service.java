@@ -37,7 +37,7 @@ private Connection connection;
 	return	books;	
 }
 
-	public int StatusUp(String status,int bookid,String rollno) {
+	public String StatusUp(String status,int bookid,String rollno) {
 		int result = 0;
 		try{
 			PreparedStatement pst;
@@ -52,7 +52,7 @@ private Connection connection;
 		catch(Exception e){
 		e.printStackTrace();
 		}
-	return	bookid;	
+	return	rollno;	
 		
 	}
 }
