@@ -37,16 +37,16 @@ private Connection connection;
 	return	books;	
 }
 
-	public int StatusUp(String status, String username,int bid,String rollno) {
+	public int StatusUp(String status, String username,int bookid,String rollno) {
 		int result = 0;
 		try{
 			PreparedStatement pst;
-			String query="update booktrans set status=?,rollno=? where username=? and bookid is ?";
+			String query="update booktrans set status=?,rollno=? where bookid=?";
 			pst=connection.prepareStatement(query);
 			pst.setString(1,status);
 			pst.setString(2,rollno);
 			pst.setString(3,username);
-			pst.setInt(4,bid);
+			pst.setInt(4,bookid);
 			 result=pst.executeUpdate();
 			
 		}
