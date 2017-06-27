@@ -43,8 +43,8 @@ private Connection connection;
 			PreparedStatement pst;
 			String query="update booktrans set status=? where username=? and bookid=?";
 			pst=connection.prepareStatement(query);
-			pst.setString(2,username);
 			pst.setString(1,status);
+			pst.setString(2,username);
 			pst.setString(3,bookid);
 			 result=pst.executeUpdate();
 			
