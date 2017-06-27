@@ -37,7 +37,7 @@ private Connection connection;
 	return	books;	
 }
 
-	public int StatusUp(String status, String username,int bookid,String rollno) {
+	public int StatusUp(String status,int bookid,String rollno) {
 		int result = 0;
 		try{
 			PreparedStatement pst;
@@ -45,8 +45,7 @@ private Connection connection;
 			pst=connection.prepareStatement(query);
 			pst.setString(1,status);
 			pst.setString(2,rollno);
-			pst.setString(3,username);
-			pst.setInt(4,bookid);
+			pst.setInt(3,bookid);
 			 result=pst.executeUpdate();
 			
 		}
