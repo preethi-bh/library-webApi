@@ -24,10 +24,10 @@ public class controller {
 		}
 
 		@PUT
-		@Path("/{update}")
+		@Path("/{update}/{bookid}/{rollno}")
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Produces("text/plain")
-		public String update(@FormParam("status") String status,@FormParam("bookid") int bookid,@FormParam("rollno") String rollno){
+		public String update(@PathParam("update") String status,@PathParam("bookid") int bookid,@PathParam("rollno") String rollno){
 			
 			String result=service.StatusUp(status,bookid,rollno);
 			return result;
