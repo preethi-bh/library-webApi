@@ -57,10 +57,10 @@ private Connection connection;
 			ResultSet rs2=pst2.executeQuery();
 
 			while(rs2!=null&&rs2.next()){
-				book.setBname(rs.getString("bname"));
-				book.setEdition(rs.getString("edition"));
-				book.setSubject(rs.getString("subject"));
-				book.setBookid(rs.getInt("bookid"));
+				book.setBname(rs2.getString("bname"));
+				book.setEdition(rs2.getString("edition"));
+				book.setSubject(rs2.getString("subject"));
+				book.setBookid(rs2.getInt("bookid"));
 			}
 			}
 				
