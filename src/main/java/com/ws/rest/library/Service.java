@@ -37,8 +37,9 @@ private Connection connection;
 	return	books;	
 }
 
-	public String StatusUp(String status,int bookid,String rollno) {
+	public Books StatusUp(String status,int bookid,String rollno) {
 		int result = 0;
+		Books book=new Books();
 		try{
 			PreparedStatement pst;
 			String query="update booktrans set status=?,rollno=? where bookid=?";
@@ -48,11 +49,27 @@ private Connection connection;
 			pst.setInt(3,bookid);
 			 result=pst.executeUpdate();
 			
+			if(result>0){
+			PreparedStatement pst2;
+			String query="select * from booktrans where bookid=?";
+			pst2=connection.prepareStatement(query);
+			pst2.setString(1,bookid);
+			ResultSet rs2=pst2.executeQuery();
+
+			while(rs!=null&&rs.next()){
+				book.setBname(rs.getString("bname"));
+				book.setEdition(rs.getString("edition"));
+				book.setSubject(rs.getString("subject"));
+				book.setBookid(rs.getInt("bookid"));
+			}
+			}
+				
+			
 		}
 		catch(Exception e){
 		e.printStackTrace();
 		}
-	return	rollno;	
-		
+	
+		return book;
 	}
 }
