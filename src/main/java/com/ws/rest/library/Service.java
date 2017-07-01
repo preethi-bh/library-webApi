@@ -51,12 +51,12 @@ private Connection connection;
 			
 			if(result>0){
 			PreparedStatement pst2;
-			String query="select * from booktrans where bookid=?";
+			query="select * from booktrans where bookid=?";
 			pst2=connection.prepareStatement(query);
-			pst2.setString(1,bookid);
+			pst2.setInt(1,bookid);
 			ResultSet rs2=pst2.executeQuery();
 
-			while(rs!=null&&rs.next()){
+			while(rs2!=null&&rs2.next()){
 				book.setBname(rs.getString("bname"));
 				book.setEdition(rs.getString("edition"));
 				book.setSubject(rs.getString("subject"));
