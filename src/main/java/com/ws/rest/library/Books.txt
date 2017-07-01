@@ -16,8 +16,7 @@ public class Books {
 		  String status;
 		  int bookid;
 		
-	Books(){
-	}
+	
 		  
 		  public String getUsername() {
 			return username;
