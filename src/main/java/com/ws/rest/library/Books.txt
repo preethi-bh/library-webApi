@@ -4,7 +4,7 @@ import java.sql.Date;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class Model {
+public class Books {
 		  String username;
 		  String bname;
 		  String edition;
@@ -16,7 +16,7 @@ public class Model {
 		  String status;
 		  int bookid;
 		
-	Model(){
+	Books(){
 	}
 		  
 		  public String getUsername() {

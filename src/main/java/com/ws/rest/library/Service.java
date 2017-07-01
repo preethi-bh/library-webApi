@@ -12,8 +12,8 @@ private Connection connection;
 	public Service(){
 		connection=DBUtility.getConnection();
 	}	
-	public List<Model> getBookAvail(String username,String subject){
-		List<Model> books=new ArrayList<Model>();
+	public List<Books> getBookAvail(String username,String subject){
+		List<Books> books=new ArrayList<Books>();
 		try{
 			PreparedStatement pst;
 			String query="select * from booktrans where username=? and subject=? and status='Available'";
@@ -23,7 +23,7 @@ private Connection connection;
 			ResultSet rs=pst.executeQuery();
 
 			while(rs!=null&&rs.next()){
-				Model book=new Model();
+				Books book=new Books();
 				book.setBname(rs.getString("bname"));
 				book.setEdition(rs.getString("edition"));
 				book.setSubject(rs.getString("subject"));

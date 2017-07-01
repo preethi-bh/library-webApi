@@ -18,8 +18,8 @@ public class controller {
 
 		@GET
 		@Produces(MediaType.APPLICATION_JSON)
-		public  List<Model> getBook(@QueryParam("username") String username,@QueryParam("subject") String subject){
-			List<Model> m=service.getBookAvail(username,subject);
+		public  List<Books> getBook(@QueryParam("username") String username,@QueryParam("subject") String subject){
+			List<Books> m=service.getBookAvail(username,subject);
 			return m;
 		}
 
