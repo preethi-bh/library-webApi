@@ -40,7 +40,7 @@ private Connection connection;
 	public Books StatusUp(String username,String status,int bookid,String rollno) {
 		int result = 0;
 		Books book=new Books();
-		String uname;
+		String uname="";
 		try{
 
 			PreparedStatement pst2;
