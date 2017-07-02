@@ -43,7 +43,7 @@ private Connection connection;
 		try{
 
 			PreparedStatement pst2;
-			query="select * from booktrans where bookid=?";
+			String query="select * from booktrans where bookid=?";
 			pst2=connection.prepareStatement(query);
 			pst2.setInt(1,bookid);
 			ResultSet rs2=pst2.executeQuery();
@@ -55,7 +55,7 @@ private Connection connection;
 			
 			try{
 				PreparedStatement pst;
-				String query="update booktrans set status=?,rollno=? where bookid=?";
+				query="update booktrans set status=?,rollno=? where bookid=?";
 				pst=connection.prepareStatement(query);
 				pst.setString(1,status);
 				pst.setString(2,rollno);
