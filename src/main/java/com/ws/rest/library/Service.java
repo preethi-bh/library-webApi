@@ -50,7 +50,7 @@ private Connection connection;
 
 			while(rs2!=null&&rs2.next()){
 				String uname=rs.getString("username");
-
+`			}
 			if(uname.equals(username){
 			
 			try{
