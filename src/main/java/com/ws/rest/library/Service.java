@@ -63,11 +63,11 @@ private Connection connection;
 			 	result=pst.executeUpdate();
 			
 				if(result>0){
-					PreparedStatement pst2;
+					
 					query="select * from booktrans where bookid=?";
 					pst2=connection.prepareStatement(query);
 					pst2.setInt(1,bookid);
-					ResultSet rs2=pst2.executeQuery();
+					rs2=pst2.executeQuery();
 
 					while(rs2!=null&&rs2.next()){
 					book.setBname(rs2.getString("bname"));
