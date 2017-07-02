@@ -40,6 +40,7 @@ private Connection connection;
 	public Books StatusUp(String username,String status,int bookid,String rollno) {
 		int result = 0;
 		Books book=new Books();
+		String uname;
 		try{
 
 			PreparedStatement pst2;
@@ -49,7 +50,7 @@ private Connection connection;
 			ResultSet rs2=pst2.executeQuery();
 
 			while(rs2!=null&&rs2.next()){
-				String uname=rs.getString("username");
+				 uname=rs2.getString("username");
 			}
 			if(uname.equals(username)){
 			
