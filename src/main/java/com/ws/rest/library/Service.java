@@ -37,10 +37,23 @@ private Connection connection;
 	return	books;	
 }
 
-	public Books StatusUp(String status,int bookid,String rollno) {
+	public Books StatusUp(String username,String status,int bookid,String rollno) {
 		int result = 0;
 		Books book=new Books();
 		try{
+
+			PreparedStatement pst2;
+			query="select * from booktrans where bookid=?";
+			pst2=connection.prepareStatement(query);
+			pst2.setInt(1,bookid);
+			ResultSet rs2=pst2.executeQuery();
+
+			while(rs2!=null&&rs2.next()){
+				String uname=rs.getString("username");
+
+			if(uname.equals(username){
+			
+			try{
 			PreparedStatement pst;
 			String query="update booktrans set status=?,rollno=? where bookid=?";
 			pst=connection.prepareStatement(query);
@@ -60,16 +73,22 @@ private Connection connection;
 				book.setBname(rs2.getString("bname"));
 				book.setEdition(rs2.getString("edition"));
 				book.setSubject(rs2.getString("subject"));
+				book.setAuthor(rs2.getString("author"));
 				book.setBookid(rs2.getInt("bookid"));
 			}
 			}
 				
 			
-		}
-		catch(Exception e){
-		e.printStackTrace();
-		}
+			}
+			catch(Exception e){
+				e.printStackTrace();
+			}
 	
+			return book;
+		
+			}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 		return book;
-	}
 }

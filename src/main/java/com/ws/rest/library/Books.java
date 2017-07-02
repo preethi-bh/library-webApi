@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Books {
 		  String username;
+		  String author;
 		  String bname;
 		  String edition;
 		  String subject;
@@ -17,6 +18,9 @@ public class Books {
 		  int bookid;
 		
 	
+		public String setAuthor(String author){
+			this.author=author;
+		}
 		  
 		  public String getUsername() {
 			return username;
