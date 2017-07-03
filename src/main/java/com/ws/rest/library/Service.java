@@ -44,21 +44,21 @@ private Connection connection;
 		String uname="",stat="";
 		try{
 
-			PreparedStatement pst2;
+			PreparedStatement pst;
 			String query="select * from booktrans where bookid=?";
-			pst2=connection.prepareStatement(query);
-			pst2.setInt(1,bookid);
-			ResultSet rs2=pst2.executeQuery();
+			pst=connection.prepareStatement(query);
+			pst.setInt(1,bookid);
+			ResultSet rs=pst.executeQuery();
 
-			while(rs2!=null&&rs2.next()){
-				 uname=rs2.getString("username");
-				stat=rs2.getString("status");
+			while(rs!=null&&rs.next()){
+				 uname=rs.getString("username");
+				stat=rs.getString("status");
 			}
 			if((uname.equals(username)) && (stat.equals("Available")))
 			{
 			
 			try{
-				PreparedStatement pst;
+				
 				query="update booktrans set status=?,rollno=? where bookid=?";
 				pst=connection.prepareStatement(query);
 				pst.setString(1,status);
@@ -69,16 +69,16 @@ private Connection connection;
 				if(result>0){
 					
 					query="select * from booktrans where bookid=?";
-					pst2=connection.prepareStatement(query);
-					pst2.setInt(1,bookid);
-					rs2=pst2.executeQuery();
+					pst=connection.prepareStatement(query);
+					pst.setInt(1,bookid);
+					rs=pst.executeQuery();
 
-					while(rs2!=null&&rs2.next()){
-					book.setBname(rs2.getString("bname"));
-					book.setEdition(rs2.getString("edition"));
-					book.setSubject(rs2.getString("subject"));
-					book.setAuthor(rs2.getString("author"));
-					book.setBookid(rs2.getInt("bookid"));
+					while(rs!=null&&rs.next()){
+					book.setBname(rs.getString("bname"));
+					book.setEdition(rs.getString("edition"));
+					book.setSubject(rs.getString("subject"));
+					book.setAuthor(rs.getString("author"));
+					book.setBookid(rs.getInt("bookid"));
 					}
 				}
 				
@@ -96,4 +96,48 @@ private Connection connection;
 		}
 		return book;
 }
+
+public Books Reserve(String username,String bname,String rollno)
+{
+	
+	Timestamp reserve=new Timestamp(System.currentTimeMillis());
+	Books b=new Books();
+	int id;
+	
+	if(bname!=null&&rollno!=null)
+	try{
+		
+		query="select MIN(Renew_Date),bookid from BookTrans where Status='Issued' and bname=? and username=?";
+		pst=con.prepareStatement(query);
+		pst.setString(1,bname);
+		pst.setString(2,username);
+		rs=pst.executeQuery();
+		while(rs.next()){
+			reserve=rs.getTimestamp("min");
+			id=rs.getInt("bookid");
+		}
+
+		query="update BookTrans set Status='Reserved',Rollno=? where Renew_Date=? and username=?";
+		pst=con.prepareStatement(query);
+		pst.setString(1,rollno);
+		pst.setTimestamp(2,reserve);
+		pst.setString(3,username);
+		res=pst.executeUpdate();
+
+		if(res>0){
+			b.setBookid(id);
+			b.setBname(bname);
+			b.setRollno(rollno);
+
+			return b;
+		}
+		else
+			return b;		
+
+	}
+	catch(Exception e){
+		out.println(e);
+	}
+}
+	
 }

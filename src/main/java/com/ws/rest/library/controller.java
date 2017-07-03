@@ -24,7 +24,7 @@ public class controller {
 		}
 
 		@PUT
-		@Path("/update")
+		@Path("/borrow")
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Produces(MediaType.APPLICATION_JSON)
 		public Books update(@QueryParam("username") String username,@QueryParam("status") String status,@QueryParam("bookid") int bookid,@QueryParam("rollno") String rollno){
@@ -32,5 +32,15 @@ public class controller {
 			Books result=service.StatusUp(username,status,bookid,rollno);
 			return result;
 		
-}
+		}
+		@PUT
+		@Path("/reserve")
+		@Consumes(MediaType.APPLICATION_JSON)
+		@Produces(MediaType.APPLICATION_JSON)
+		public Books Reserve(@Query("username") String username,@Query("bname") String bname,@Query("rollno") String rollno)	
+			Books result=service.StatusUp(username,bname,rollno);
+			return result;
+		
+		}
+
 }
