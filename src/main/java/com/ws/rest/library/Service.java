@@ -54,7 +54,8 @@ private Connection connection;
 				 uname=rs2.getString("username");
 				status=rs2.getString("status");
 			}
-			if((uname.equals(username))&&(status.equals('Available'))){
+			if((uname.equals(username)) && (status.equals('Available')))
+			{
 			
 			try{
 				PreparedStatement pst;
