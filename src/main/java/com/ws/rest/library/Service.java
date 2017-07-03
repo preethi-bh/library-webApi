@@ -102,7 +102,9 @@ public Books Reserve(String username,String bname,String rollno)
 	
 	Timestamp reserve=new Timestamp(System.currentTimeMillis());
 	Books b=new Books();
-	int id;
+	int id,res;
+	PreparedStatement pst;
+	ResultSet rs;
 	
 	if(bname!=null&&rollno!=null)
 	try{

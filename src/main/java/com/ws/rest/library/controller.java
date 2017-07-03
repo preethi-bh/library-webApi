@@ -38,7 +38,7 @@ public class controller {
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Produces(MediaType.APPLICATION_JSON)
 		public Books Reserve(@Query("username") String username,@Query("bname") String bname,@Query("rollno") String rollno){	
-			Books result=service.StatusUp(username,bname,rollno);
+			Books result=service.Reserve(username,bname,rollno);
 			return result;
 		
 		}
