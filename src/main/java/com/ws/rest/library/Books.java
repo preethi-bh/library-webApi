@@ -11,7 +11,7 @@ public class Books {
 		  String edition;
 		  String subject;
 		  String rollno;
-		  int mobileno;
+		// int mobileno;
 		  Date issue_date;
 		  Date renew_date;
 		  String status;
@@ -52,12 +52,12 @@ public class Books {
 		public void setRollno(String rollno) {
 			this.rollno = rollno;
 		}
-		public int getMobileno() {
+		/* public int getMobileno() {
 			return mobileno;
 		}
 		public void setMobileno(int mobileno) {
 			this.mobileno = mobileno;
-		}
+		} */
 		public Date getIssue_date() {
 			return issue_date;
 		}
