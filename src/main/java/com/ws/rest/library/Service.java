@@ -75,7 +75,7 @@ private Connection connection;
 					book.setBname(rs2.getString("bname"));
 					book.setEdition(rs2.getString("edition"));
 					book.setSubject(rs2.getString("subject"));
-					book.setAuthor(rs2.getString("author"));
+					book.setAuth(rs2.getString("author"));
 					book.setBookid(rs2.getInt("bookid"));
 					}
 				}
