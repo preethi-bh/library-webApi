@@ -28,7 +28,7 @@ private Connection connection;
 				book.setEdition(rs.getString("edition"));
 				book.setSubject(rs.getString("subject"));
 				book.setBookid(rs.getInt("bookid"));
-				book.setAuthor(rs.getString("author"));
+				//book.setAuthor(rs.getString("author"));
 				books.add(book);
 		  	 }
 		}
