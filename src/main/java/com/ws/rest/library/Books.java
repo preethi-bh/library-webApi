@@ -30,7 +30,7 @@ public class Books {
 			this.author=author;
 		}
 
-		public void getAuthor(){
+		public String getAuthor(){
 			return author;
 		}
 		public String getBname() {
