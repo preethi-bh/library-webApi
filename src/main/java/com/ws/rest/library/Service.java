@@ -41,7 +41,7 @@ private Connection connection;
 	public Books StatusUp(String username,String status,int bookid,String rollno) {
 		int result = 0;
 		Books book=new Books();
-		String uname="",status="";
+		String uname="",stat="";
 		try{
 
 			PreparedStatement pst2;
@@ -52,9 +52,9 @@ private Connection connection;
 
 			while(rs2!=null&&rs2.next()){
 				 uname=rs2.getString("username");
-				status=rs2.getString("status");
+				stat=rs2.getString("status");
 			}
-			if((uname.equals(username)) && (status.equals("Available")))
+			if((uname.equals(username)) && (stat.equals("Available")))
 			{
 			
 			try{
