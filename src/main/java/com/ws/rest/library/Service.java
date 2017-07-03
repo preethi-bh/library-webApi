@@ -103,7 +103,7 @@ public Books Reserve(String username,String bname,String rollno)
 	
 	Timestamp reserve=new Timestamp(System.currentTimeMillis());
 	Books b=new Books();
-	int id,res;
+	int id=0,res;
 	PreparedStatement pst;
 	ResultSet rs;
 	
@@ -134,13 +134,13 @@ public Books Reserve(String username,String bname,String rollno)
 
 			return b;
 		}
-		else
-			return b;		
+				
 
 	}
 	catch(Exception e){
 		e.printStackTrace();
 	}
+	return b;
 }
 	
 }
