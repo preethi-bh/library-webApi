@@ -37,7 +37,7 @@ public class controller {
 		@Path("/reserve")
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Produces(MediaType.APPLICATION_JSON)
-		public Books Reserve(@Query("username") String username,@Query("bname") String bname,@Query("rollno") String rollno){	
+		public Books Reserve(@QueryParam("username") String username,@QueryParam("bname") String bname,@QueryParam("rollno") String rollno){	
 			Books result=service.Reserve(username,bname,rollno);
 			return result;
 		

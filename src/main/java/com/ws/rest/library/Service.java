@@ -3,6 +3,7 @@ package com.ws.rest.library;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -109,8 +110,8 @@ public Books Reserve(String username,String bname,String rollno)
 	if(bname!=null&&rollno!=null)
 	try{
 		
-		query="select MIN(Renew_Date),bookid from BookTrans where Status='Issued' and bname=? and username=?";
-		pst=con.prepareStatement(query);
+		String query="select MIN(Renew_Date),bookid from BookTrans where Status='Issued' and bname=? and username=?";
+		pst=connection.prepareStatement(query);
 		pst.setString(1,bname);
 		pst.setString(2,username);
 		rs=pst.executeQuery();
@@ -120,7 +121,7 @@ public Books Reserve(String username,String bname,String rollno)
 		}
 
 		query="update BookTrans set Status='Reserved',Rollno=? where Renew_Date=? and username=?";
-		pst=con.prepareStatement(query);
+		pst=connection.prepareStatement(query);
 		pst.setString(1,rollno);
 		pst.setTimestamp(2,reserve);
 		pst.setString(3,username);
@@ -138,7 +139,7 @@ public Books Reserve(String username,String bname,String rollno)
 
 	}
 	catch(Exception e){
-		out.println(e);
+		e.printStackTrace();
 	}
 }
 	
