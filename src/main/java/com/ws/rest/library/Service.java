@@ -28,7 +28,7 @@ private Connection connection;
 				book.setEdition(rs.getString("edition"));
 				book.setSubject(rs.getString("subject"));
 				book.setBookid(rs.getInt("bookid"));
-				book.setAuth(rs.getString("author"));
+				book.setAuthor(rs.getString("author"));
 				books.add(book);
 		  	 }
 		}
@@ -75,7 +75,7 @@ private Connection connection;
 					book.setBname(rs2.getString("bname"));
 					book.setEdition(rs2.getString("edition"));
 					book.setSubject(rs2.getString("subject"));
-					book.setAuth(rs2.getString("author"));
+					book.setAuthor(rs2.getString("author"));
 					book.setBookid(rs2.getInt("bookid"));
 					}
 				}
