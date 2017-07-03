@@ -18,15 +18,20 @@ public class Books {
 		  int bookid;
 		
 	
-		public void setAuthor(String author){
-			this.author=author;
-		}
 		  
 		  public String getUsername() {
 			return username;
 		}
+
 		public void setUsername(String username) {
 			this.username = username;
+		}
+		public void setAuthor(String author){
+			this.author=author;
+		}
+
+		public void getAuthor(){
+			return author;
 		}
 		public String getBname() {
 			return bname;
