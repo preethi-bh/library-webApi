@@ -14,7 +14,6 @@ private Connection connection;
 		connection=DBUtility.getConnection();
 	}
 	public Books login(String username,String rollno,String password){
-			Books b=new Books();
 		try{
 			PreparedStatement pst;
 			String query="select * from student where username=? and rollno=? and password=?";
@@ -25,6 +24,7 @@ private Connection connection;
 			ResultSet rs=pst.executeQuery();
 			
 			while(rs!=null&&rs.next()){
+					Books b=new Books();
 					b.setUsername(rs.getString("name")); 				
 		  	 }
 		}
