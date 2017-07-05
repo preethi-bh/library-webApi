@@ -82,10 +82,6 @@ public class Books {
         return subject;
     }
 
-    public int getMobileno() {
-        return mobileno;
-    }
-
     public int getBookid() {
         return bookid;
     }
