@@ -16,13 +16,12 @@ public class Books {
 		  int bookid;
 		  String password;
 		
-	
-		  
-		 
+				 
 
 		public void setUsername(String username) {
 			this.username = username;
 		}
+
 		public void setAuthor(String author){
 			this.author=author;
 		}
@@ -65,6 +64,51 @@ public class Books {
 		public void setBookid(int bookid) {
 			this.bookid = bookid;
 		}
+		public String getUsername() {
+        	return username;	
+		}
+
+    		
+
+  	  public String getBname() {
+        return bname;
+    }
+
+    public String getEdition() {
+        return edition;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public int getMobileno() {
+        return mobileno;
+    }
+
+    public int getBookid() {
+        return bookid;
+    }
+
+    public Date getRenew_date() {
+        return renew_date;
+    }
+
+    public Date getIssue_date() {
+        return issue_date;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getRollno() {
+        return rollno;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
 		
 	
 }
