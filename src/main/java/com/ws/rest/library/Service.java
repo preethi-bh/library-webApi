@@ -21,11 +21,12 @@ private Connection connection;
 			pst=connection.prepareStatement(query);
 			pst.setString(1,username);
 			pst.setString(2,rollno);
+			pst.setString(3,password);
 			ResultSet rs=pst.executeQuery();
 
 			while(rs!=null&&rs.next()){
 					b.setRollno(rs.getString("rollno")); 
-					return b;				
+									
 		
 		  	 }
 		}
