@@ -9,7 +9,6 @@ public class Books {
 		  String edition;
 		  String subject;
 		  String rollno;
-		 int mobileno;
 		  Date issue_date;
 		  Date renew_date;
 		  String status;
