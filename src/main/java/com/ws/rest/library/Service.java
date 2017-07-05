@@ -23,6 +23,7 @@ private Connection connection;
 			pst.setString(2,rollno);
 			pst.setString(3,password);
 			ResultSet rs=pst.executeQuery();
+			b.setRollno("rollno");
 
 			while(rs!=null&&rs.next()){
 					//b.setUsername(rs.getString("name")); 
