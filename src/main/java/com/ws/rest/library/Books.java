@@ -45,10 +45,6 @@ public class Books {
 			this.rollno = rollno;
 		}
 		
-		public void setMobileno(int mobileno) {
-			this.mobileno = mobileno;
-		}
-		
 		public void setIssue_date(Date issue_date) {
 			this.issue_date = issue_date;
 		}
