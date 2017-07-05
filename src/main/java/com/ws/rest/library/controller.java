@@ -42,5 +42,14 @@ public class controller {
 			return result;
 		
 		}
-
+		@GET
+		@Path("/login")
+		@Consumes(MediaType.APPLICATION_JSON)
+		@Produces(MediaType.APPLICATION_JSON)
+		public Books login(@QueryParam("username") String username,@QueryParam("rollno") String rollno,@QueryParam("password") String password){
+			Books result=service.login(username,rollno,password);
+			return result;
+		
+		}
+			
 }

@@ -12,6 +12,27 @@ private Connection connection;
 	
 	public Service(){
 		connection=DBUtility.getConnection();
+	}
+	public Books login(String username,String rollno,String password){
+			Books b=new Books();
+		try{
+			PreparedStatement pst;
+			String query="select * from student where username=? and rollno=? and password=?";
+			pst=connection.prepareStatement(query);
+			pst.setString(1,username);
+			pst.setString(2,rollno);
+			ResultSet rs=pst.executeQuery();
+
+			while(rs!=null&&rs.next()){
+					b.setRollno(rs.getString("rollno")); 				
+		
+		  	 }
+		}
+		catch(Exception e){
+		e.printStackTrace();
+		}
+	return	b;	//Returns null if student is not present else returns rollno as successfull response
+		
 	}	
 	public List<Books> getBookAvail(String username,String subject){
 		List<Books> books=new ArrayList<Books>();
@@ -109,8 +130,18 @@ public Books Reserve(String username,String bname,String rollno)
 	
 	if(bname!=null&&rollno!=null)
 	try{
-		
-		String query="select MIN(Renew_Date),bookid from BookTrans where Status='Issued' and bname=? and username=?";
+		String query="select * from booktrans where username=? and bname=? and Status='Available'";
+		pst=connection.prepareStatement(query);
+		pst.setString(1,username);
+		pst.setString(2,bname);
+		rs=pst.executeQuery();
+		if(rs!=null){
+			b.setBookid(id);//Returns bookid as 0 to indicate books are available
+			return b;
+		}
+			
+		else{
+		query="select MIN(Renew_Date),bookid from BookTrans where Status='Issued' and bname=? and username=?";
 		pst=connection.prepareStatement(query);
 		pst.setString(1,bname);
 		pst.setString(2,username);
@@ -130,9 +161,9 @@ public Books Reserve(String username,String bname,String rollno)
 		if(res>0){
 			b.setBookid(id);
 			b.setBname(bname);
-			b.setRollno(rollno);
 
-			return b;
+			return b;	//Returns a successfull response of reserved book
+		}
 		}
 				
 
@@ -140,7 +171,7 @@ public Books Reserve(String username,String bname,String rollno)
 	catch(Exception e){
 		e.printStackTrace();
 	}
-	return b;
+	return b;	//Returns null set indicating error in the query params
 }
 	
 }
