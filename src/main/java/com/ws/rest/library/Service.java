@@ -25,8 +25,8 @@ private Connection connection;
 			ResultSet rs=pst.executeQuery();
 
 			while(rs!=null&&rs.next()){
-					b.setUsername(rs.getString("name")); 
-									
+					//b.setUsername(rs.getString("name")); 
+					b.setUsername("name");				
 		
 		  	 }
 		}
