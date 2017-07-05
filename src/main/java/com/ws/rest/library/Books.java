@@ -14,7 +14,9 @@ public class Books {
 		  String status;
 		  int bookid;
 		  String password;
-
+		
+		Books(){
+		}
 		
 		
 		public void setUsername(String username) {
