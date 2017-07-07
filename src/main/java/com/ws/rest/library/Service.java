@@ -48,7 +48,7 @@ private Connection connection;
 			if(res>0)
 			query="select Renew_Date from booktrans where barcode=?";
 			pst=connection.prepareStatement(query);
-			pst.setString(barcode);
+			pst.setString(1,barcode);
 			ResultSet rs=pst.executeQuery();
 			
 			while(rs!=null){
