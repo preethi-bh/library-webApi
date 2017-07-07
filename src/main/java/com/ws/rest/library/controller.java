@@ -52,7 +52,7 @@ public class controller {
 		}
 
 		@PUT
-		@Path("/renew)
+		@Path("/renew")
 		@Consumes(MediaType.APPLICATION_JSON)
 		@Produces(MediaType.APPLICATION_JSON)
 		public Books Renew(@QueryParam("barcode") String barcode){
