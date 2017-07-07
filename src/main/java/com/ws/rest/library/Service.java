@@ -41,7 +41,7 @@ private Connection connection;
 		try{
 			PreparedStatement pst;
 			String query="update booktrans set Renew_Date=now()+ interval '15 days' where barcode=?";
-			pst.connection.prepareStatement(query);
+			pst=connection.prepareStatement(query);
 			pst.setString(1,barcode);
 			res=pst.executeUpdate();
 			
