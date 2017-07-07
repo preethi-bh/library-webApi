@@ -50,5 +50,13 @@ public class controller {
 			return result;
 		
 		}
-			
+
+		@PUT
+		@Path("/renew)
+		@Consumes(MediaType.APPLICATION_JSON)
+		@Produces(MediaType.APPLICATION_JSON)
+		public Books Renew(@QueryParam("barcode") String barcode){
+			Books result=service.Renew(barcode);
+			return result;
+		}			
 }

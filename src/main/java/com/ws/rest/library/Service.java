@@ -34,6 +34,34 @@ private Connection connection;
 	return	b;	//Returns null if student is not present else returns rollno as successfull response
 		
 	}	
+
+	public Books Renew(String barcode){
+			Books b=new Books();
+			int res;
+		try{
+			PreparedStatement pst;
+			String query="update booktrans set Renew_Date=now()+ interval '15 days' where barcode=?";
+			pst.connection.prepareStatement(query);
+			pst.setString(1,barcode);
+			res=pst.executeUpdate();
+			
+			if(res>0)
+			query="select Renew_Date from booktrans where barcode=?";
+			pst.connection.prepareStatement(query);
+			pst.setString(barcode);
+			ResultSet rs=pst.executeQuery();
+			
+			while(rs!=null){
+				b.setRenew_date(rs.getString("renew_date");
+			}
+		}	
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return b;
+	}
+			
+
 	public List<Books> getBookAvail(String username,String subject){
 		List<Books> books=new ArrayList<Books>();
 		try{

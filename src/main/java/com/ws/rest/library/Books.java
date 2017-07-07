@@ -15,9 +15,6 @@ public class Books {
 		  int bookid;
 		  String password;
 		
-		Books(){
-		}
-		
 		
 		public void setUsername(String username) {
 			this.username = username;
