@@ -53,6 +53,7 @@ private Connection connection;
 			
 			while(rs!=null){
 				b.setRenew_date(rs.getDate("renew_date"));
+				return b;
 			}
 		}	
 		catch(Exception e){
