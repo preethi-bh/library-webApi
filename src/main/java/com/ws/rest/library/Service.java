@@ -51,7 +51,7 @@ private Connection connection;
 			pst.setString(1,barcode);
 			ResultSet rs=pst.executeQuery();
 			
-			while(rs!=null){
+			while(rs!=null&&rs.next()){
 				b.setRenew_date(rs.getTimestamp("renew_date"));
 				return b;
 			}
