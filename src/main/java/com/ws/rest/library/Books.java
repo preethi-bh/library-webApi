@@ -1,6 +1,6 @@
 package com.ws.rest.library;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Books {
 		  String username;
@@ -9,8 +9,8 @@ public class Books {
 		  String edition;
 		  String subject;
 		  String rollno;
-		  Date issue_date;
-		  Date renew_date;
+		  Timestamp issue_date;
+		  Timestamp renew_date;
 		  String status;
 		  int bookid;
 		  String password;
@@ -43,11 +43,11 @@ public class Books {
 			this.rollno = rollno;
 		}
 		
-		public void setIssue_date(Date issue_date) {
+		public void setIssue_date(Timestamp issue_date) {
 			this.issue_date = issue_date;
 		}
 		
-		public void setRenew_date(Date renew_date) {
+		public void setRenew_date(Timestamp renew_date) {
 			this.renew_date = renew_date;
 		}
 		
@@ -80,11 +80,11 @@ public class Books {
         return bookid;
     }
 
-    public Date getRenew_date() {
+    public Timestamp getRenew_date() {
         return renew_date;
     }
 
-    public Date getIssue_date() {
+    public Timestamp getIssue_date() {
         return issue_date;
     }
 
