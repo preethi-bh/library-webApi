@@ -52,7 +52,7 @@ private Connection connection;
 			ResultSet rs=pst.executeQuery();
 			
 			while(rs!=null){
-				b.setRenew_date(rs.getDate("renew_date"));
+				b.setRenew_date(rs.getTimestamp("renew_date"));
 				return b;
 			}
 		}	
