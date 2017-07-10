@@ -164,9 +164,12 @@ public Books Reserve(String username,String bname,String rollno)
 		pst.setString(1,username);
 		pst.setString(2,bname);
 		rs=pst.executeQuery();
+		
 		if(rs!=null){
+			while(rs.next()){
 			b.setBookid(id);//Returns bookid as 0 to indicate books are available
 			return b;
+			}
 		}
 			
 		else{
